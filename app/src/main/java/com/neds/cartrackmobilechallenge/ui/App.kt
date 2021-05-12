@@ -28,5 +28,7 @@ class App : Application() {
         val fileLogger = Lg.FileLogCollector("Logs", BuildConfig.APPLICATION_ID, 3)
         Lg.addLogger(fileLogger)
         Lg.addDebugLogger()
+
+
     }
 }

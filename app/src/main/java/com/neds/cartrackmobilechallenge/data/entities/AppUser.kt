@@ -11,4 +11,12 @@ data class AppUser(
     var username: String,
     var password: String,
     var country: String
-)
+) {
+    constructor(
+        userId: Long,
+        fullName: String,
+        username: String,
+        password: String,
+        country: String
+    ) : this(0, userId, fullName, username, password, country)
+}

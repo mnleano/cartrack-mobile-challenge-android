@@ -19,7 +19,6 @@ class LoginActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
 
-
         initViews()
         observeData()
 
@@ -40,6 +39,14 @@ class LoginActivity : BaseActivity() {
                     override fun onCountrySelected(country: String) =
                         vm.country.postValue(country)
                 }).show(supportFragmentManager, CountryPickerDialog.TAG)
+        })
+
+        vm.loggedInResult.observe(this, {
+            Lg.d("observeData: loggedInResult=${it.status}")
+        })
+
+        vm.errorMessage.observe(this, {
+            Lg.d("observeData: errorMessage=$it")
         })
     }
 }

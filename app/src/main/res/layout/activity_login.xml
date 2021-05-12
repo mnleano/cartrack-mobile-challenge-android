@@ -5,6 +5,8 @@
 
     <data>
 
+        <import type="android.view.View" />
+
         <variable
             name="vm"
             type="com.neds.cartrackmobilechallenge.data.viewModels.LoginViewModel" />
@@ -43,6 +45,7 @@
             <androidx.core.widget.ContentLoadingProgressBar
                 android:id="@+id/loading"
                 style="@style/ProgressBar.Horizontal"
+                android:visibility="@{vm.loading ? View.VISIBLE : View.GONE}"
                 app:layout_constraintBottom_toTopOf="@+id/guideline"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

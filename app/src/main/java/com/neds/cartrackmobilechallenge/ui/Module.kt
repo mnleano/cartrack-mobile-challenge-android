@@ -5,18 +5,25 @@ import com.facebook.soloader.SoLoader
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.neds.cartrackmobilechallenge.BuildConfig
+import com.neds.cartrackmobilechallenge.data.entities.AppUser
 import com.neds.cartrackmobilechallenge.data.entities.MyObjectBox
 import com.neds.cartrackmobilechallenge.data.local.AccountPrefStore
 import com.neds.cartrackmobilechallenge.data.local.LocalPreferences
 import com.neds.cartrackmobilechallenge.data.remote.NetworkInterceptor
+import com.neds.cartrackmobilechallenge.data.repositories.LoginRepository
+import com.neds.cartrackmobilechallenge.data.repositories.SplashRepository
 import com.neds.cartrackmobilechallenge.data.viewModels.LoginViewModel
+import com.neds.cartrackmobilechallenge.data.viewModels.SplashViewModel
 import com.tencent.mmkv.MMKV
+import io.objectbox.Box
+import io.objectbox.BoxStore
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.androidx.viewmodel.dsl.viewModel
+import org.koin.core.qualifier.named
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -60,6 +67,7 @@ val modules = module {
 
     // Database - ObjectBox
     single { MyObjectBox.builder().androidContext(get<Context>()).build() }
+    factory(named("appUserBox")) { get<BoxStore>().boxFor(AppUser::class.java) as Box<AppUser> }
 
     // Remote - Web service
     single { initCoroutineScope() }
@@ -78,10 +86,13 @@ val modules = module {
 
 
     // Repository
-
+    factory { SplashRepository(get(named("appUserBox")), get()) }
+    factory { LoginRepository(get(named("appUserBox")), get()) }
 
     // ViewModel
-    viewModel { LoginViewModel() }
+    viewModel { SplashViewModel(get()) }
+    viewModel { LoginViewModel(get()) }
+
 
 }
 
