@@ -1,7 +1,8 @@
-package com.neds.cartrackmobilechallange
+package com.neds.cartrackmobilechallenge.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.neds.cartrackmobilechallenge.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

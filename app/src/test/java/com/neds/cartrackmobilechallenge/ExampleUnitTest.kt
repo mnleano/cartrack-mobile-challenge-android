@@ -1,4 +1,4 @@
-package com.neds.cartrackmobilechallange
+package com.neds.cartrackmobilechallenge
 
 import org.junit.Test
 

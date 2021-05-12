@@ -1,6 +1,6 @@
-package com.neds.cartrackmobilechallange.data
+package com.neds.cartrackmobilechallenge.data
 
-import com.neds.cartrackmobilechallange.BuildConfig
+import com.neds.cartrackmobilechallenge.BuildConfig
 
 object SharedPrefManager {
     private const val TAG = "SharedPrefManager"

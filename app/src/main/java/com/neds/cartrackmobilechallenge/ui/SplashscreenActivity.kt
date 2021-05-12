@@ -1,10 +1,12 @@
-package com.neds.cartrackmobilechallange
+package com.neds.cartrackmobilechallenge.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import com.neds.cartrackmobilechallenge.R
+import com.neds.cartrackmobilechallenge.ui.intro.IntroActivity
 
 class SplashscreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,4 +1,4 @@
-package com.neds.cartrackmobilechallange.data.local
+package com.neds.cartrackmobilechallenge.data.local
 import com.google.gson.Gson
 import com.tencent.mmkv.MMKV
 

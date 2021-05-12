@@ -8,7 +8,7 @@
     <color name="blue">#00B2FF</color>
 
     <color name="background_mask">#80000000</color>
-    <color name="background_window">#F9F9F9</color>
+    <color name="background_window">#FFFFFF</color>
     <color name="background_landing_edit_text">#BFFFFFFF</color>
     <color name="background_button">#00B2FF</color>
 

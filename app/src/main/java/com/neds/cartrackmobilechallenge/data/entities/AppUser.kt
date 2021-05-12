@@ -1,4 +1,4 @@
-package com.neds.cartrackmobilechallange.data.entities
+package com.neds.cartrackmobilechallenge.data.entities
 
 import io.objectbox.annotation.Entity
 import io.objectbox.annotation.Id

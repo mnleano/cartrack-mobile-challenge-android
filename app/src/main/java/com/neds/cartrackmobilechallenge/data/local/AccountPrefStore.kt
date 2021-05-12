@@ -1,4 +1,4 @@
-package com.neds.cartrackmobilechallange.data.local
+package com.neds.cartrackmobilechallenge.data.local
 class AccountPrefStore(private val prefs: LocalPreferences) {
 
     var isLoggedIn: Boolean

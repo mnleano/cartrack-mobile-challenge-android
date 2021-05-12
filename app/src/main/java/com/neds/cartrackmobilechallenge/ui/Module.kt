@@ -1,14 +1,14 @@
-package com.neds.cartrackmobilechallange.ui
+package com.neds.cartrackmobilechallenge.ui
 
 import android.content.Context
 import com.facebook.soloader.SoLoader
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.neds.cartrackmobilechallange.BuildConfig
-import com.neds.cartrackmobilechallange.data.entities.MyObjectBox
-import com.neds.cartrackmobilechallange.data.local.AccountPrefStore
-import com.neds.cartrackmobilechallange.data.local.LocalPreferences
-import com.neds.cartrackmobilechallange.data.remote.NetworkInterceptor
+import com.neds.cartrackmobilechallenge.BuildConfig
+import com.neds.cartrackmobilechallenge.data.entities.MyObjectBox
+import com.neds.cartrackmobilechallenge.data.local.AccountPrefStore
+import com.neds.cartrackmobilechallenge.data.local.LocalPreferences
+import com.neds.cartrackmobilechallenge.data.remote.NetworkInterceptor
 import com.tencent.mmkv.MMKV
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

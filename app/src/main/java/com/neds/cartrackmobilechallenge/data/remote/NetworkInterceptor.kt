@@ -1,4 +1,4 @@
-package com.neds.cartrackmobilechallange.data.remote
+package com.neds.cartrackmobilechallenge.data.remote
 
 import android.content.Context
 import android.net.ConnectivityManager

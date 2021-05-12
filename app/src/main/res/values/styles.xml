@@ -1,5 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="CollapsingToolbarLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:background">@color/white</item>
+        <item name="collapsedTitleGravity">start</item>
+        <item name="expandedTitleMarginBottom">@dimen/expanded_title_margin_bottom</item>
+        <item name="expandedTitleMarginStart">@dimen/expanded_title_margin_start</item>
+        <item name="expandedTitleTextAppearance">@style/CollapsingToolbarLayout.Expanded</item>
+        <item name="layout_scrollFlags">scroll|exitUntilCollapsed</item>
+    </style>
+
+    <style name="CollapsingToolbarLayout.Expanded">
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@null</item>
+        <item name="android:textColor">@color/text_color_black</item>
+        <item name="android:textSize">@dimen/expanded_toolbar_text_size</item>
+    </style>
+
+    <style name="AppBarLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/app_bar_height</item>
+        <item name="elevation">0dp</item>
+    </style>
+
+    <style name="Toolbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?android:attr/actionBarSize</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="subtitleTextColor">@color/white</item>
+    </style>
+
+    <style name="CollapsingToolbar" parent="Toolbar">
+        <item name="android:background">@color/white</item>
+        <item name="android:theme">@style/CollapsingToolbar.Theme</item>
+        <item name="android:homeAsUpIndicator">@drawable/ic_back_arrow</item>
+    </style>
+
+    <style name="CollapsingToolbar.Theme">
+        <item name="android:actionMenuTextColor">@color/blue</item>
+        <item name="colorControlNormal">@color/blue</item>
+    </style>
+
+    <style name="Guideline">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="ProgressBar.Horizontal" parent="Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:indeterminate">true</item>
+    </style>
+
+    <style name="ConstraintLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
 
     <style name="TextView">
         <item name="android:layout_width">wrap_content</item>
@@ -77,8 +138,8 @@
     <style name="TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginStart">@dimen/_32dp</item>
-        <item name="android:layout_marginEnd">@dimen/_32dp</item>
+        <item name="android:layout_marginStart">@dimen/_16dp</item>
+        <item name="android:layout_marginEnd">@dimen/_16dp</item>
         <item name="android:textColorHint">@color/text_color_hint</item>
         <item name="boxStrokeColor">@color/blue</item>
         <item name="errorTextAppearance">@style/TextInputLayout.Error</item>
@@ -121,14 +182,19 @@
         <item name="android:inputType">textPassword</item>
     </style>
 
+    <style name="TextInputEditText.ActionGo" parent="TextInputEditText">
+        <item name="android:imeOptions">actionGo</item>
+    </style>
+
     <style name="Button" parent="Widget.MaterialComponents.Button.UnelevatedButton">
         <item name="android:layout_height">@dimen/button_height</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:textColor">@color/text_color_white</item>
         <item name="android:textSize">@dimen/text_size_small</item>
-        <item name="android:layout_marginStart">@dimen/_32dp</item>
-        <item name="android:layout_marginEnd">@dimen/_32dp</item>
+        <item name="android:layout_marginStart">@dimen/_16dp</item>
+        <item name="android:layout_marginEnd">@dimen/_16dp</item>
         <item name="backgroundTint">@drawable/background_button</item>
+        <item name="cornerRadius">@dimen/corner_radius</item>
     </style>
 
     <style name="Button.Secondary" parent="Widget.MaterialComponents.Button.OutlinedButton">
@@ -136,9 +202,10 @@
         <item name="android:layout_width">0dp</item>
         <item name="android:textColor">@color/text_color_primary</item>
         <item name="android:textSize">@dimen/text_size_small</item>
-        <item name="android:layout_marginStart">@dimen/_32dp</item>
-        <item name="android:layout_marginEnd">@dimen/_32dp</item>
+        <item name="android:layout_marginStart">@dimen/_16dp</item>
+        <item name="android:layout_marginEnd">@dimen/_16dp</item>
         <item name="strokeColor">@color/blue</item>
+        <item name="cornerRadius">@dimen/corner_radius</item>
     </style>
 
     <style name="BottomNavigation">

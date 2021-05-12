@@ -1,4 +1,4 @@
-package com.neds.cartrackmobilechallange
+package com.neds.cartrackmobilechallenge
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

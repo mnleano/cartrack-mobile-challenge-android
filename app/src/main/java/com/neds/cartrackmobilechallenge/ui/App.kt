@@ -1,8 +1,8 @@
-package com.neds.cartrackmobilechallange.ui
+package com.neds.cartrackmobilechallenge.ui
 
 import android.app.Application
-import com.neds.cartrackmobilechallange.BuildConfig
-import com.neds.cartrackmobilechallange.infrastructure.Lg
+import com.neds.cartrackmobilechallenge.BuildConfig
+import com.neds.cartrackmobilechallenge.infrastructure.Lg
 import io.objectbox.BoxStore
 import io.objectbox.android.AndroidObjectBrowser
 import org.koin.android.ext.android.inject

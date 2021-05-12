@@ -1,3 +1,17 @@
 <resources>
-    <string name="app_name">Cartrack Mobile Challange</string>
+    <string name="app_name">Cartrack Mobile Challenge</string>
+
+    <!-- Log In -->
+    <string name="log_in">Log In</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="new_user">New User?</string>
+    <string name="sign_up">Sign Up</string>
+
+    <!-- Error Messages -->
+    <string name="invalid_email">Invalid email format.</string>
+
+    <!-- Uncategorized -->
+    <string name="tagline_placeholder">Add some cool tagline here</string>
 </resources>

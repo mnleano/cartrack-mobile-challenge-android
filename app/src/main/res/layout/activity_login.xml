@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.neds.cartrackmobilechallenge.data.viewModels.LoginViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            style="@style/AppBarLayout">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                style="@style/CollapsingToolbarLayout"
+                app:title="@string/log_in">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    style="@style/CollapsingToolbar"
+                    app:layout_collapseMode="pin" />
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                style="@style/Guideline"
+                app:layout_constraintGuide_begin="@dimen/_4dp" />
+
+            <androidx.core.widget.ContentLoadingProgressBar
+                android:id="@+id/loading"
+                style="@style/ProgressBar.Horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/container"
+                style="@style/ConstraintLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/loading">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilEmail"
+                    style="@style/TextInputLayout"
+                    android:layout_marginTop="@dimen/_16dp"
+                    android:hint="@string/email"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etEmail"
+                        style="@style/TextInputEditText"
+                        android:inputType="textEmailAddress"
+                        android:text="@={vm.email}"
+                        app:validateEmpty="@{true}"
+                        app:validateEmptyAutoDismiss="@{true}"
+                        app:validateType='@{"email"}'
+                        app:validateTypeAutoDismiss="@{true}"
+                        app:validateTypeMessage="@{@string/invalid_email}" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilPassword"
+                    style="@style/TextInputLayout"
+                    android:layout_marginTop="@dimen/_16dp"
+                    android:hint="@string/password"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tilEmail"
+                    app:passwordToggleEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPassword"
+                        style="@style/TextInputEditText.ActionGo"
+                        android:inputType="textPassword"
+                        android:text="@={vm.password}"
+                        app:validateEmpty="@{true}"
+                        app:validateEmptyAutoDismiss="@{true}" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnLogin"
+                    style="@style/Button"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/_32dp"
+                    android:enabled="@{vm.valid &amp;&amp; !vm.loading}"
+                    android:onClick="@{() -> vm.login()}"
+                    android:text="@string/login"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tilPassword" />
+
+
+                <TextView
+                    android:id="@+id/lblNewUser"
+                    style="@style/TextView.Label"
+                    android:layout_marginTop="@dimen/_16dp"
+                    android:layout_marginEnd="@dimen/_2dp"
+                    android:text="@string/new_user"
+                    app:layout_constraintEnd_toStartOf="@+id/btnSignUp"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+
+                <TextView
+                    android:id="@+id/btnSignUp"
+                    style="@style/TextView.Button"
+                    android:layout_marginStart="@dimen/_2dp"
+                    android:onClick="@{() -> vm.signUpClickEvent()}"
+                    android:text="@string/sign_up"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/lblNewUser"
+                    app:layout_constraintTop_toTopOf="@+id/lblNewUser" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
