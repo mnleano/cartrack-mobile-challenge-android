@@ -23,5 +23,4 @@ open class BaseViewModel: ViewModel() {
         validator.enableFormValidationMode()
         this.validator = validator
     }
-
 }

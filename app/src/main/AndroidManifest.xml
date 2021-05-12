@@ -12,17 +12,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CartrackMobileChallange">
-        <activity android:name="com.neds.cartrackmobilechallenge.ui.intro.SignUpActivity"></activity>
-        <activity android:name="com.neds.cartrackmobilechallenge.ui.intro.LoginActivity" />
-        <activity android:name="com.neds.cartrackmobilechallenge.ui.SplashscreenActivity">
+        <activity
+            android:name="com.neds.cartrackmobilechallenge.ui.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.neds.cartrackmobilechallenge.ui.login.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.neds.cartrackmobilechallenge.ui.SplashscreenActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.neds.cartrackmobilechallenge.ui.intro.IntroActivity" />
-        <activity android:name="com.neds.cartrackmobilechallenge.ui.MainActivity" />
     </application>
 
 </manifest>

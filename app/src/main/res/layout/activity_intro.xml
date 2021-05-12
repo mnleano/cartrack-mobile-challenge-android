@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/background_window"
-        tools:context=".ui.intro.IntroActivity">
+        tools:context=".ui.login.IntroActivity">
 
         <ImageView
             android:id="@+id/logo"

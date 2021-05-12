@@ -1,4 +1,4 @@
-package com.neds.cartrackmobilechallenge.ui.intro
+package com.neds.cartrackmobilechallenge.ui.login
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

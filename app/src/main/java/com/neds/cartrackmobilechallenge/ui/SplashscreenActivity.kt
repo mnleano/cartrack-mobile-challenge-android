@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import com.neds.cartrackmobilechallenge.R
-import com.neds.cartrackmobilechallenge.ui.intro.IntroActivity
+import com.neds.cartrackmobilechallenge.ui.login.LoginActivity
 
 class SplashscreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,7 +14,7 @@ class SplashscreenActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splashscreen)
 
         Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this@SplashscreenActivity, IntroActivity::class.java))
+            startActivity(Intent(this@SplashscreenActivity, LoginActivity::class.java))
         }, 500)
     }
 }
