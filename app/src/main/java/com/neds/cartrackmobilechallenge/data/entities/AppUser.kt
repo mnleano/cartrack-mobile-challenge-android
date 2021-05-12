@@ -8,7 +8,7 @@ data class AppUser(
     @Id var id: Long = 0,
     var userId: Long,
     var fullName: String,
-    var phoneNumber: String,
-    var emailAddress: String,
-    var password: String
+    var username: String,
+    var password: String,
+    var country: String
 )

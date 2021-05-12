@@ -5,7 +5,7 @@
   "entities": [
     {
       "id": "1:8076889040157438661",
-      "lastPropertyId": "7:1135385244600092188",
+      "lastPropertyId": "9:8850401617476650889",
       "name": "AppUser",
       "properties": [
         {
@@ -26,18 +26,18 @@
           "type": 9
         },
         {
-          "id": "4:1587180928469601709",
-          "name": "phoneNumber",
-          "type": 9
-        },
-        {
-          "id": "5:6801262372081764805",
-          "name": "emailAddress",
-          "type": 9
-        },
-        {
           "id": "7:1135385244600092188",
           "name": "password",
+          "type": 9
+        },
+        {
+          "id": "8:3084446544988081281",
+          "name": "username",
+          "type": 9
+        },
+        {
+          "id": "9:8850401617476650889",
+          "name": "country",
           "type": 9
         }
       ],
@@ -53,7 +53,9 @@
   "retiredEntityUids": [],
   "retiredIndexUids": [],
   "retiredPropertyUids": [
-    1704897325959897587
+    1704897325959897587,
+    1587180928469601709,
+    6801262372081764805
   ],
   "retiredRelationUids": [],
   "version": 1

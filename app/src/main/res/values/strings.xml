@@ -3,29 +3,42 @@
 
     <!-- Log In -->
     <string name="log_in">Log In</string>
-    <string name="email">Email</string>
+    <string name="username">Username</string>
     <string name="password">Password</string>
+    <string name="country">Country</string>
     <string name="login">Login</string>
-    <string name="new_user">New User?</string>
-    <string name="sign_up">Sign Up</string>
 
-    <!-- Sign Up -->
-    <string name="full_name">Full Name</string>
-    <string name="phone_number">Phone Number</string>
-    <string name="email_address">Email Address</string>
-    <string name="address">Address</string>
-    <string name="confirm_password">Confirm Password</string>
-    <string name="register">Register</string>
-    <string name="already_user">Already User?</string>
+    <!-- Countries -->
+    <string name="select_country">Select Country</string>
 
-
-    <!-- Error Messages -->
-    <string name="invalid_email">Invalid email format.</string>
-    <string name="invalid_password_format">Password must have at least 8 characters, 1 uppercase letter, 1 lowercase letter, 1 number, 1 special character.</string>
-
-    <!-- Regex -->
-    <string name="password_regex" tools:ignore="TypographyDashes">"^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[@#$%^&amp;+=.!/()=?¡,*-]).{8,}$"</string>
+    <string-array name="countries">
+        <item>Botswana</item>
+        <item>Hong Kong</item>
+        <item>Indonesia</item>
+        <item>Kenya </item>
+        <item>Malawi</item>
+        <item>Malaysia</item>
+        <item>Mozambique</item>
+        <item>Namibia</item>
+        <item>New Zealand</item>
+        <item>Nigeria</item>
+        <item>Philippines</item>
+        <item>Poland</item>
+        <item>Portugal</item>
+        <item>Rwanda</item>
+        <item>Singapore</item>
+        <item>South Africa</item>
+        <item>Spain</item>
+        <item>Swaziland</item>
+        <item>Tanzania</item>
+        <item>Thailand</item>
+        <item>United Arab Emirates</item>
+        <item>USA</item>
+        <item>Zimbabwe</item>
+    </string-array>
 
     <!-- Uncategorized -->
     <string name="tagline_placeholder">Add some cool tagline here</string>
+
+
 </resources>

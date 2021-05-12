@@ -123,6 +123,7 @@
     </style>
 
     <style name="TextView.Title" parent="TextView.XL">
+        <item name="android:textColor">@color/text_color_black</item>
         <item name="android:textStyle">bold</item>
     </style>
 
@@ -226,6 +227,10 @@
         <item name="android:background">@color/stroke_color</item>
         <item name="android:layout_marginStart">@dimen/_16dp</item>
         <item name="android:layout_marginEnd">@dimen/_16dp</item>
+    </style>
+
+    <style name="Divider.Thin" parent="Divider">
+        <item name="android:layout_height">@dimen/stroke_weight_thin</item>
     </style>
 
     <style name="Divider.Blue" parent="Divider">

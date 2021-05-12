@@ -54,24 +54,19 @@
                 app:layout_constraintTop_toBottomOf="@+id/loading">
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/tilEmail"
+                    android:id="@+id/tilUsername"
                     style="@style/TextInputLayout"
                     android:layout_marginTop="@dimen/_16dp"
-                    android:hint="@string/email"
+                    android:hint="@string/username"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/etEmail"
+                        android:id="@+id/etUsername"
                         style="@style/TextInputEditText"
-                        android:inputType="textEmailAddress"
-                        android:text="@={vm.email}"
-                        app:validateEmpty="@{true}"
-                        app:validateEmptyAutoDismiss="@{true}"
-                        app:validateType='@{"email"}'
-                        app:validateTypeAutoDismiss="@{true}"
-                        app:validateTypeMessage="@{@string/invalid_email}" />
+                        android:drawableStart="@drawable/ic_profile"
+                        android:text="@={vm.username}" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -82,16 +77,38 @@
                     android:hint="@string/password"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tilEmail"
+                    app:layout_constraintTop_toBottomOf="@id/tilUsername"
                     app:passwordToggleEnabled="true">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etPassword"
-                        style="@style/TextInputEditText.ActionGo"
+                        style="@style/TextInputEditText"
+                        android:drawableStart="@drawable/ic_password"
                         android:inputType="textPassword"
-                        android:text="@={vm.password}"
-                        app:validateEmpty="@{true}"
-                        app:validateEmptyAutoDismiss="@{true}" />
+                        android:text="@={vm.password}" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilCountry"
+                    style="@style/TextInputLayout"
+                    android:layout_marginTop="@dimen/_16dp"
+                    android:hint="@string/country"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tilPassword">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etCountry"
+                        style="@style/TextInputEditText.ActionGo"
+                        android:clickable="true"
+                        android:cursorVisible="false"
+                        android:drawableStart="@drawable/ic_address"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:onClick="@{() -> vm.countryClickEvent()}"
+                        android:text="@={vm.country}"
+                        tools:ignore="KeyboardInaccessibleWidget" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -104,29 +121,7 @@
                     android:onClick="@{() -> vm.login()}"
                     android:text="@string/login"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tilPassword" />
-
-
-                <TextView
-                    android:id="@+id/lblNewUser"
-                    style="@style/TextView.Label"
-                    android:layout_marginTop="@dimen/_16dp"
-                    android:layout_marginEnd="@dimen/_2dp"
-                    android:text="@string/new_user"
-                    app:layout_constraintEnd_toStartOf="@+id/btnSignUp"
-                    app:layout_constraintHorizontal_chainStyle="packed"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
-
-                <TextView
-                    android:id="@+id/btnSignUp"
-                    style="@style/TextView.Button"
-                    android:layout_marginStart="@dimen/_2dp"
-                    android:onClick="@{() -> vm.signUpClickEvent()}"
-                    android:text="@string/sign_up"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/lblNewUser"
-                    app:layout_constraintTop_toTopOf="@+id/lblNewUser" />
+                    app:layout_constraintTop_toBottomOf="@+id/tilCountry" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>

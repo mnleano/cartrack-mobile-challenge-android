@@ -6,17 +6,18 @@ import com.neds.cartrackmobilechallenge.infrastructure.SingleEvent
 
 class LoginViewModel : BaseViewModel() {
 
-    val email = MutableLiveData<String>()
+    val username = MutableLiveData<String>()
     val password = MutableLiveData<String>()
+    val country = MutableLiveData<String>()
+
+    private val mCountryClickEvent = MutableLiveData<SingleEvent<Unit>>()
+    val countryClickEvent: LiveData<SingleEvent<Unit>> = mCountryClickEvent
 
     private val mLoginSuccessfulEvent = MutableLiveData<SingleEvent<Unit>>()
     val loginSuccessfulEvent: LiveData<SingleEvent<Unit>> = mLoginSuccessfulEvent
 
-    private val mSignUpClickEvent = MutableLiveData<SingleEvent<Unit>>()
-    val signUpClickEvent: LiveData<SingleEvent<Unit>> = mSignUpClickEvent
-
     init {
-        formValidation.addRequiredString(email)
+        formValidation.addRequiredString(username)
         formValidation.addRequiredString(password)
     }
 
@@ -24,8 +25,6 @@ class LoginViewModel : BaseViewModel() {
 
     }
 
-    fun signUpClickEvent(){
-
-    }
+    fun countryClickEvent() = mCountryClickEvent.postValue(SingleEvent(Unit))
 
 }
