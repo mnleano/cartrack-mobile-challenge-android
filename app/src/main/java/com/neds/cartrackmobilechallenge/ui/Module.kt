@@ -9,12 +9,15 @@ import com.neds.cartrackmobilechallenge.data.entities.MyObjectBox
 import com.neds.cartrackmobilechallenge.data.local.AccountPrefStore
 import com.neds.cartrackmobilechallenge.data.local.LocalPreferences
 import com.neds.cartrackmobilechallenge.data.remote.NetworkInterceptor
+import com.neds.cartrackmobilechallenge.data.viewModels.LoginViewModel
+import com.neds.cartrackmobilechallenge.data.viewModels.SignUpViewModel
 import com.tencent.mmkv.MMKV
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -79,7 +82,8 @@ val modules = module {
 
 
     // ViewModel
-
+    viewModel { LoginViewModel() }
+    viewModel { SignUpViewModel() }
 
 }
 

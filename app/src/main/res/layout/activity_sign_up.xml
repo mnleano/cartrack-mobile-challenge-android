@@ -1,9 +1,188 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.intro.SignUpActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <data>
+
+        <variable
+            name="vm"
+            type="com.neds.cartrackmobilechallenge.data.viewModels.SignUpViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            style="@style/AppBarLayout">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                style="@style/CollapsingToolbarLayout"
+                app:title="@string/sign_up">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    style="@style/CollapsingToolbar"
+                    app:layout_collapseMode="pin" />
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                style="@style/Guideline"
+                app:layout_constraintGuide_begin="@dimen/_4dp" />
+
+            <androidx.core.widget.ContentLoadingProgressBar
+                android:id="@+id/loading"
+                style="@style/ProgressBar.Horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/container"
+                style="@style/ConstraintLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/loading">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilName"
+                    style="@style/TextInputLayout"
+                    android:layout_marginTop="@dimen/_16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/TextInputEditText"
+                        android:drawableStart="@drawable/ic_name"
+                        android:hint="@string/full_name"
+                        android:text="@={vm.fullName}"
+                        app:validateEmpty="@{true}"
+                        app:validateEmptyAutoDismiss="@{true}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilPhoneNumber"
+                    style="@style/TextInputLayout"
+                    android:layout_marginTop="@dimen/_8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tilName">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/TextInputEditText"
+                        android:drawableStart="@drawable/ic_phone"
+                        android:hint="@string/phone_number"
+                        android:inputType="number"
+                        android:maxLength="11"
+                        android:text="@={vm.phoneNumber}"
+                        app:validateEmpty="@{true}"
+                        app:validateEmptyAutoDismiss="@{true}"
+                        app:validateMaxLength="@{11}"
+                        app:validateMaxLengthAutoDismiss="@{true}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilEmailAddress"
+                    style="@style/TextInputLayout"
+                    android:layout_marginTop="@dimen/_8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tilPhoneNumber">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/TextInputEditText"
+                        android:drawableStart="@drawable/ic_email"
+                        android:hint="@string/email_address"
+                        android:inputType="textEmailAddress"
+                        android:text="@={vm.emailAddress}"
+                        app:validateEmpty="@{true}"
+                        app:validateEmptyAutoDismiss="@{true}"
+                        app:validateMaxLength="@{255}"
+                        app:validateMaxLengthAutoDismiss="@{true}"
+                        app:validateType='@{"email"}'
+                        app:validateTypeAutoDismiss="@{true}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilPassword"
+                    style="@style/TextInputLayout"
+                    android:layout_marginTop="@dimen/_8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tilEmailAddress">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/TextInputEditText"
+                        android:drawableStart="@drawable/ic_password"
+                        android:hint="@string/password"
+                        android:inputType="textPassword"
+                        android:text="@={vm.password}"
+                        app:validateEmpty="@{true}"
+                        app:validateEmptyAutoDismiss="@{true}"
+                        app:validateRegex='@{@string/password_regex}'
+                        app:validateRegexAutoDismiss="@{true}"
+                        app:validateRegexMessage="@{@string/invalid_password_format}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilConfirmPassword"
+                    style="@style/TextInputLayout"
+                    android:layout_marginTop="@dimen/_8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tilPassword">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/TextInputEditText"
+                        android:drawableStart="@drawable/ic_password"
+                        android:hint="@string/confirm_password"
+                        android:inputType="textPassword"
+                        android:text="@={vm.confirmPassword}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnRegister"
+                    style="@style/Button"
+                    android:layout_marginTop="@dimen/_16dp"
+                    android:enabled="@{vm.valid &amp;&amp; !vm.loading}"
+                    android:onClick="@{() -> vm.register()}"
+                    android:text="@string/register"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tilConfirmPassword" />
+
+                <TextView
+                    android:id="@+id/lblAlreadyUser"
+                    style="@style/TextView.Label"
+                    android:layout_marginTop="@dimen/_16dp"
+                    android:layout_marginEnd="@dimen/_2dp"
+                    android:text="@string/already_user"
+                    app:layout_constraintEnd_toStartOf="@+id/btnLogin"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btnRegister" />
+
+                <TextView
+                    android:id="@+id/btnLogin"
+                    style="@style/TextView.Button"
+                    android:layout_marginStart="@dimen/_2dp"
+                    android:onClick="@{() -> vm.loginClickEvent()}"
+                    android:text="@string/log_in"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/lblAlreadyUser"
+                    app:layout_constraintTop_toTopOf="@+id/lblAlreadyUser" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
