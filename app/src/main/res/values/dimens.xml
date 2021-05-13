@@ -29,11 +29,13 @@
     <dimen name="_96dp">66dp</dimen>
 
     <dimen name="avatar_size_small">64dp</dimen>
+    <dimen name="avatar_size_big">96dp</dimen>
 
     <dimen name="corner_radius">8dp</dimen>
 
-    <dimen name="stroke_weight">1dp</dimen>
     <dimen name="stroke_weight_thin">0.5dp</dimen>
+    <dimen name="stroke_weight">1dp</dimen>
+    <dimen name="stroke_weight_thick">2dp</dimen>
 
     <dimen name="button_height">56dp</dimen>
     <dimen name="product_height">72dp</dimen>

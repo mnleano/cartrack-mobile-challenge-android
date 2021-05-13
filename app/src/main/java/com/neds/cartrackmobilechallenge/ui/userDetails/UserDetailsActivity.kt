@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.databinding.DataBindingUtil
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -18,13 +19,27 @@ import com.neds.cartrackmobilechallenge.databinding.ActivityUserDetailsBinding
 class UserDetailsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var binding: ActivityUserDetailsBinding
-
+    private lateinit var user: UserView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_user_details)
 
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        intent.extras?.let {
+            user = it.getSerializable(KEY_USER) as UserView
+            binding.data = user
+        } ?: finish()
+
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home) finish()
+
+        return super.onOptionsItemSelected(item)
     }
 
     companion object {
@@ -36,11 +51,8 @@ class UserDetailsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
         // Add a marker in Sydney and move the camera
-        val sydney = LatLng(-34.0, 151.0)
-        googleMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 10f))
-        googleMap.animateCamera(CameraUpdateFactory.zoomIn());
-        // Zoom out to zoom level 10, animating with a duration of 2 seconds.
-        googleMap.animateCamera(CameraUpdateFactory.zoomTo(10f), 2000, null);
+        val location = LatLng(user.address.geo.lat, user.address.geo.lng)
+        googleMap.addMarker(MarkerOptions().position(location).title(user.name))
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 10f))
     }
 }

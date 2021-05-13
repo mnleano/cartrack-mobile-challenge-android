@@ -6,7 +6,7 @@ import java.io.Serializable
 
 data class Geo(
     @SerializedName("lat")
-    val lat: String,
+    val lat: Double,
     @SerializedName("lng")
-    val lng: String
+    val lng: Double
 ) : Serializable

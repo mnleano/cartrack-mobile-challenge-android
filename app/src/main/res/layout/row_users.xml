@@ -23,10 +23,10 @@
             app:gtMonoTextColor="@color/white"
             app:gtTextSize="@dimen/text_size_large"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/username" />
+            app:layout_constraintTop_toTopOf="@+id/name" />
 
         <TextView
-            android:id="@+id/username"
+            android:id="@+id/name"
             style="@style/TextView.Data.Bold.Special"
             android:layout_marginStart="@dimen/_8dp"
             android:layout_marginTop="@dimen/_16dp"
@@ -41,8 +41,8 @@
             android:layout_marginTop="@dimen/_4dp"
             android:text="@{data.email}"
             app:drawableStartCompat="@drawable/ic_email"
-            app:layout_constraintStart_toStartOf="@+id/username"
-            app:layout_constraintTop_toBottomOf="@+id/username"
+            app:layout_constraintStart_toStartOf="@+id/name"
+            app:layout_constraintTop_toBottomOf="@+id/name"
             tools:text="@tools:sample/full_names" />
 
         <TextView
@@ -54,7 +54,7 @@
             android:text="@{data.phone}"
             app:drawableStartCompat="@drawable/ic_phone"
             app:layout_constraintEnd_toStartOf="@+id/ivProceed"
-            app:layout_constraintStart_toStartOf="@+id/username"
+            app:layout_constraintStart_toStartOf="@+id/name"
             app:layout_constraintTop_toBottomOf="@+id/email"
             tools:text="@tools:sample/full_names" />
 
@@ -67,7 +67,7 @@
             android:text="@{data.company.name}"
             app:drawableStartCompat="@drawable/ic_company"
             app:layout_constraintEnd_toStartOf="@+id/ivProceed"
-            app:layout_constraintStart_toStartOf="@+id/username"
+            app:layout_constraintStart_toStartOf="@+id/name"
             app:layout_constraintTop_toBottomOf="@+id/phone"
             tools:text="@tools:sample/full_names" />
 
@@ -80,7 +80,7 @@
             app:drawableStartCompat="@drawable/ic_address"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/ivProceed"
-            app:layout_constraintStart_toStartOf="@+id/username"
+            app:layout_constraintStart_toStartOf="@+id/name"
             app:layout_constraintTop_toBottomOf="@+id/company"
             tools:text="@tools:sample/full_names" />
 

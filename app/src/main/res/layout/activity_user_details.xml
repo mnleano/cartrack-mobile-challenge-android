@@ -1,16 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.neds.cartrackmobilechallenge.data.views.UserView" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/background_window2">
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/map"
-            android:name="com.google.android.gms.maps.SupportMapFragment"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/zero_dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/informationContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_2dp"
+                    android:layout_marginTop="@dimen/_64dp"
+                    android:layout_marginEnd="@dimen/_2dp"
+                    android:background="@drawable/background_user_details_section"
+                    android:padding="@dimen/_16dp"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/name"
+                        style="@style/TextView.Data.Bold.XL"
+                        android:layout_marginTop="@dimen/_48dp"
+                        android:text="@{data.name}"
+                        android:textColor="@color/text_color_primary"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="@tools:sample/full_names" />
+
+                    <TextView
+                        android:id="@+id/username"
+                        style="@style/TextView.Data"
+                        android:text="@{data.username}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/name"
+                        tools:text="@tools:sample/full_names" />
+
+                    <TextView
+                        android:id="@+id/email"
+                        style="@style/TextView.Data"
+                        android:layout_marginTop="@dimen/_8dp"
+                        android:text="@{data.email}"
+                        app:drawableStartCompat="@drawable/ic_email"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/username"
+                        tools:text="@tools:sample/full_names" />
+
+                    <TextView
+                        android:id="@+id/phone"
+                        style="@style/TextView.Data"
+                        android:layout_width="0dp"
+                        android:layout_marginTop="@dimen/_4dp"
+                        android:ellipsize="end"
+                        android:text="@{data.phone}"
+                        app:drawableStartCompat="@drawable/ic_phone"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/email"
+                        tools:text="@tools:sample/full_names" />
+
+                    <TextView
+                        android:id="@+id/company"
+                        style="@style/TextView.Data"
+                        android:layout_width="0dp"
+                        android:layout_marginTop="@dimen/_4dp"
+                        android:ellipsize="end"
+                        android:text="@{data.company.name}"
+                        app:drawableStartCompat="@drawable/ic_company"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/phone"
+                        tools:text="@tools:sample/full_names" />
+
+                    <TextView
+                        style="@style/TextView.Label"
+                        android:layout_width="0dp"
+                        android:layout_marginTop="@dimen/_4dp"
+                        android:layout_marginBottom="@dimen/_16dp"
+                        android:text="@{data.address.fullAddress()}"
+                        app:drawableStartCompat="@drawable/ic_address"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/company"
+                        tools:text="@tools:sample/full_names" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/map"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="0dp"
+                    android:layout_height="300dp"
+                    android:layout_marginStart="@dimen/_2dp"
+                    android:layout_marginTop="@dimen/_32dp"
+                    android:layout_marginEnd="@dimen/_2dp"
+                    android:layout_marginBottom="@dimen/_8dp"
+                    android:background="@drawable/background_user_details_section"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/informationContainer" />
+
+                <com.neds.cartrackmobilechallenge.ui.widgets.GThumb
+                    android:id="@+id/gtInitial"
+                    android:layout_width="@dimen/avatar_size_big"
+                    android:layout_height="@dimen/avatar_size_big"
+                    android:layout_marginStart="@dimen/_16dp"
+                    android:layout_marginTop="@dimen/_16dp"
+                    app:gThumbUsername="@{data.name}"
+                    app:gtMonoTextColor="@color/white"
+                    app:gtTextSize="@dimen/text_size_2xl"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
