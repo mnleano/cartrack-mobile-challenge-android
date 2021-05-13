@@ -14,4 +14,6 @@ data class Address(
     val suite: String,
     @SerializedName("zipcode")
     val zipcode: String
-)
+) {
+    fun fullAddress() = "$suite $street, $city $zipcode"
+}

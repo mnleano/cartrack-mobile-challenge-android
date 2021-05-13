@@ -37,6 +37,9 @@
         <item>Zimbabwe</item>
     </string-array>
 
+    <!-- Users -->
+    <string name="users">Users</string>
+
     <!-- SnackBar -->
     <string name="retry">Retry</string>
 

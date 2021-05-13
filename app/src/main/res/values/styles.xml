@@ -74,6 +74,8 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:includeFontPadding">false</item>
         <item name="android:textColor">@color/text_color_primary</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:drawablePadding">@dimen/_8dp</item>
     </style>
 
     <style name="TextView.S" parent="TextView">

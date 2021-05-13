@@ -19,7 +19,6 @@ class UserViewModel(private val repository: UserRepository) : BaseViewModel() {
     }
 
     private fun getUsers() {
-
         viewModelScope.launch {
             mLoading.postValue(true)
             repository.getUsers().let { response ->
@@ -29,6 +28,5 @@ class UserViewModel(private val repository: UserRepository) : BaseViewModel() {
                 }
             }
         }
-
     }
 }

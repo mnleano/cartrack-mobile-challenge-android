@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.neds.cartrackmobilechallenge.data.views.UserView" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?selectableItemBackground">
+
+        <com.neds.cartrackmobilechallenge.ui.widgets.GThumb
+            android:id="@+id/gtInitial"
+            android:layout_width="@dimen/avatar_size_small"
+            android:layout_height="@dimen/avatar_size_small"
+            android:layout_marginStart="@dimen/_16dp"
+            app:gThumbUsername="@{data.name}"
+            app:gtMonoTextColor="@color/white"
+            app:gtTextSize="@dimen/text_size_large"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/username" />
+
+        <TextView
+            android:id="@+id/username"
+            style="@style/TextView.Data.Bold.Special"
+            android:layout_marginStart="@dimen/_8dp"
+            android:layout_marginTop="@dimen/_16dp"
+            android:text="@{data.name}"
+            app:layout_constraintStart_toEndOf="@+id/gtInitial"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@tools:sample/full_names" />
+
+        <TextView
+            android:id="@+id/email"
+            style="@style/TextView.Data"
+            android:layout_marginTop="@dimen/_4dp"
+            android:text="@{data.email}"
+            app:drawableStartCompat="@drawable/ic_email"
+            app:layout_constraintStart_toStartOf="@+id/username"
+            app:layout_constraintTop_toBottomOf="@+id/username"
+            tools:text="@tools:sample/full_names" />
+
+        <TextView
+            android:id="@+id/phone"
+            style="@style/TextView.Data"
+            android:layout_width="0dp"
+            android:layout_marginTop="@dimen/_4dp"
+            android:ellipsize="end"
+            android:text="@{data.phone}"
+            app:drawableStartCompat="@drawable/ic_phone"
+            app:layout_constraintEnd_toStartOf="@+id/ivProceed"
+            app:layout_constraintStart_toStartOf="@+id/username"
+            app:layout_constraintTop_toBottomOf="@+id/email"
+            tools:text="@tools:sample/full_names" />
+
+        <TextView
+            android:id="@+id/company"
+            style="@style/TextView.Data"
+            android:layout_width="0dp"
+            android:layout_marginTop="@dimen/_4dp"
+            android:ellipsize="end"
+            android:text="@{data.company.name}"
+            app:drawableStartCompat="@drawable/ic_company"
+            app:layout_constraintEnd_toStartOf="@+id/ivProceed"
+            app:layout_constraintStart_toStartOf="@+id/username"
+            app:layout_constraintTop_toBottomOf="@+id/phone"
+            tools:text="@tools:sample/full_names" />
+
+        <TextView
+            style="@style/TextView.Label"
+            android:layout_width="0dp"
+            android:layout_marginTop="@dimen/_4dp"
+            android:layout_marginBottom="@dimen/_16dp"
+            android:text="@{data.address.fullAddress()}"
+            app:drawableStartCompat="@drawable/ic_address"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ivProceed"
+            app:layout_constraintStart_toStartOf="@+id/username"
+            app:layout_constraintTop_toBottomOf="@+id/company"
+            tools:text="@tools:sample/full_names" />
+
+        <ImageView
+            android:id="@+id/ivProceed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_16dp"
+            android:src="@drawable/ic_arrow_right"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            style="@style/Divider.Thin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

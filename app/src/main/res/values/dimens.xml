@@ -3,7 +3,8 @@
 
     <!-- Collapse toolbar -->
     <dimen name="expanded_title_margin_start">16dp</dimen>
-    <dimen name="expanded_title_margin_bottom">12dp</dimen> <!-- Everytime you add dp in appbar you add here as well -->
+    <dimen name="expanded_title_margin_bottom">12dp
+    </dimen> <!-- Everytime you add dp in appbar you add here as well -->
     <dimen name="expanded_toolbar_text_size">@dimen/text_size_2xl</dimen>
     <dimen name="app_bar_height">92dp</dimen>
 
@@ -27,6 +28,8 @@
     <dimen name="_80dp">80dp</dimen>
     <dimen name="_96dp">66dp</dimen>
 
+    <dimen name="avatar_size_small">64dp</dimen>
+
     <dimen name="corner_radius">8dp</dimen>
 
     <dimen name="stroke_weight">1dp</dimen>
@@ -34,5 +37,5 @@
 
     <dimen name="button_height">56dp</dimen>
     <dimen name="product_height">72dp</dimen>
-    <dimen name="product_height_big">128dp</dimen>"
+    <dimen name="product_height_big">128dp</dimen>
 </resources>
