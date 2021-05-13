@@ -25,6 +25,7 @@ class UserDetailsActivity : AppCompatActivity(), OnMapReadyCallback {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_user_details)
 
         setSupportActionBar(binding.toolbar)
+        supportActionBar?.title = ""
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         intent.extras?.let {
