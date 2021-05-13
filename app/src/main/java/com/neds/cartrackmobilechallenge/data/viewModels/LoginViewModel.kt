@@ -12,7 +12,7 @@ import com.neds.cartrackmobilechallenge.infrastructure.SingleEvent
 
 class LoginViewModel(private val repository: LoginRepository) : BaseViewModel() {
 
-    val username = MutableLiveData<String>()
+    val email = MutableLiveData<String>()
     val password = MutableLiveData<String>()
     val country = MutableLiveData<String>()
 
@@ -23,17 +23,20 @@ class LoginViewModel(private val repository: LoginRepository) : BaseViewModel() 
     val loggedInResult: LiveData<RepositoryResult<Void>> = mLoggedInResult
 
     init {
-        formValidation.addRequiredString(username)
+        formValidation.addRequiredString(email)
         formValidation.addRequiredString(password)
         formValidation.addRequiredString(country)
     }
 
     fun login() {
 
-        val username = this.username.value
+        validator?.let { if (!it.validate()) return }
+
+        val username = this.email.value
         val password = this.password.value
         val country = this.country.value
         Lg.d("login: username=$username, password=$password, country=$country")
+
         if (username == null || password == null || country == null)
             return
 
@@ -53,4 +56,9 @@ class LoginViewModel(private val repository: LoginRepository) : BaseViewModel() 
 
     fun countryClickEvent() = mCountryClickEvent.postValue(SingleEvent())
 
+    fun clearFields() {
+        email.postValue("")
+        password.postValue("")
+        country.postValue("")
+    }
 }
