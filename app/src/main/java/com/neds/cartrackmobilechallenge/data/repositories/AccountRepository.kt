@@ -4,7 +4,7 @@ import com.neds.cartrackmobilechallenge.data.entities.AppUser
 import com.neds.cartrackmobilechallenge.data.local.AccountPrefStore
 import io.objectbox.Box
 
-class SplashRepository(
+class AccountRepository(
     private val appUserBox: Box<AppUser>,
     private val accountPrefStore: AccountPrefStore
 ) {
@@ -224,4 +224,7 @@ class SplashRepository(
     }
 
     fun isLoggedIn() = accountPrefStore.isLoggedIn
+    fun logOut() {
+        accountPrefStore.isLoggedIn = false
+    }
 }

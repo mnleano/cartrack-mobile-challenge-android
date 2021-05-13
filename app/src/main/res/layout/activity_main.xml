@@ -9,7 +9,7 @@
 
         <variable
             name="vm"
-            type="com.neds.cartrackmobilechallenge.data.viewModels.UserViewModel" />
+            type="com.neds.cartrackmobilechallenge.data.viewModels.MainViewModel" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout

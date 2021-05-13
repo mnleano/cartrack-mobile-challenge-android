@@ -1,8 +1,8 @@
 package com.neds.cartrackmobilechallenge.data.viewModels
 
-import com.neds.cartrackmobilechallenge.data.repositories.SplashRepository
+import com.neds.cartrackmobilechallenge.data.repositories.AccountRepository
 
-class SplashViewModel(private val repository: SplashRepository) : BaseViewModel() {
+class SplashViewModel(private val repository: AccountRepository) : BaseViewModel() {
 
     init {
         repository.populateAppUser()

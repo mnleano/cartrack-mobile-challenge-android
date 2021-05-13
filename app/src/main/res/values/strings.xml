@@ -7,6 +7,9 @@
     <string name="password">Password</string>
     <string name="country">Country</string>
     <string name="login">Login</string>
+    <string name="logout">Logout</string>
+    <string name='log_out'>Log Out</string>
+    <string name="log_out_confirmation">Are you sure you want to log out?</string>
 
     <!-- Countries -->
     <string name="select_country">Select Country</string>
