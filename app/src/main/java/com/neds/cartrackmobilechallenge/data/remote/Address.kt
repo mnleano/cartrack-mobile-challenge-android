@@ -2,6 +2,7 @@ package com.neds.cartrackmobilechallenge.data.remote
 
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Address(
     @SerializedName("city")
@@ -14,6 +15,6 @@ data class Address(
     val suite: String,
     @SerializedName("zipcode")
     val zipcode: String
-) {
+): Serializable {
     fun fullAddress() = "$suite $street, $city $zipcode"
 }

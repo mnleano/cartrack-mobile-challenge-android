@@ -8,6 +8,7 @@ import com.neds.cartrackmobilechallenge.data.viewModels.UserViewModel
 import com.neds.cartrackmobilechallenge.data.views.UserView
 import com.neds.cartrackmobilechallenge.databinding.ActivityMainBinding
 import com.neds.cartrackmobilechallenge.infrastructure.Lg
+import com.neds.cartrackmobilechallenge.ui.userDetails.UserDetailsActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
@@ -33,6 +34,7 @@ class MainActivity : AppCompatActivity() {
         adapter = UserAdapter(users, object : UserAdapter.UserClickListener {
             override fun onUserClicked(user: UserView) {
                 Lg.d("initViews.onUserClicked: user=$user")
+                startActivity(UserDetailsActivity.makeIntent(this@MainActivity, user))
             }
         })
 

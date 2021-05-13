@@ -9,7 +9,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.neds.cartrackmobilechallange"
+        applicationId "com.neds.cartrackmobilechallenge"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
@@ -48,6 +48,9 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    // Maps
+    implementation 'com.google.android.gms:play-services-maps:17.0.1'
 
     // Data Binding Validator
     implementation 'com.github.Ilhasoft:data-binding-validator:2.0.0'

@@ -2,6 +2,7 @@ package com.neds.cartrackmobilechallenge.data.remote
 
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Company(
     @SerializedName("bs")
@@ -10,4 +11,4 @@ data class Company(
     val catchPhrase: String,
     @SerializedName("name")
     val name: String
-)
+): Serializable
