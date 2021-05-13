@@ -9,7 +9,7 @@ open class BaseActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        KeyboardUtil.hideKeyboard(this, window.decorView.rootView)
+        KeyboardUtil.setupUI(this, window.decorView.rootView)
     }
 
     fun startClearTaskActivity(intent: Intent) {
