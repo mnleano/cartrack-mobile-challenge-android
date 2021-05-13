@@ -13,5 +13,6 @@
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
         <!-- Customize your theme here. -->
         <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowAnimationStyle">@style/DefaultAnimation</item>
     </style>
 </resources>
