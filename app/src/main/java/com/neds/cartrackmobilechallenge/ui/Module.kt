@@ -10,10 +10,13 @@ import com.neds.cartrackmobilechallenge.data.entities.MyObjectBox
 import com.neds.cartrackmobilechallenge.data.local.AccountPrefStore
 import com.neds.cartrackmobilechallenge.data.local.LocalPreferences
 import com.neds.cartrackmobilechallenge.data.remote.NetworkInterceptor
+import com.neds.cartrackmobilechallenge.data.remote.UserService
 import com.neds.cartrackmobilechallenge.data.repositories.LoginRepository
 import com.neds.cartrackmobilechallenge.data.repositories.SplashRepository
+import com.neds.cartrackmobilechallenge.data.repositories.UserRepository
 import com.neds.cartrackmobilechallenge.data.viewModels.LoginViewModel
 import com.neds.cartrackmobilechallenge.data.viewModels.SplashViewModel
+import com.neds.cartrackmobilechallenge.data.viewModels.UserViewModel
 import com.tencent.mmkv.MMKV
 import io.objectbox.Box
 import io.objectbox.BoxStore
@@ -83,16 +86,17 @@ val modules = module {
     }
 
     // Remote - Services
-
+    single { get<Retrofit>().create(UserService::class.java) as UserService }
 
     // Repository
     factory { SplashRepository(get(named("appUserBox")), get()) }
     factory { LoginRepository(get(named("appUserBox")), get()) }
+    factory { UserRepository(get()) }
 
     // ViewModel
     viewModel { SplashViewModel(get()) }
     viewModel { LoginViewModel(get()) }
-
+    viewModel { UserViewModel(get()) }
 
 }
 
