@@ -24,4 +24,4 @@ usa@ctmc.com : Abcd1234! : USA<br/>
 zimbabwe@ctmc.com : Abcd1234! : Zimbabwe<br/>
 
 APK: [APK Folder](https://github.com/mnleano/cartrack-mobile-challenge-android/tree/master/apk)<br/>
-Direct download link: [Cartrack Mobile Challange](https://github.com/mnleano/cartrack-mobile-challenge-android/raw/master/apk/Cartrack-Mobile-Challenge-1.0-debug.apk)
+Direct download link: [Cartrack Mobile Challange](https://github.com/mnleano/cartrack-mobile-challenge-android/raw/master/apk/Cartrack-Mobile-Challenge-0.0.2-debug.apk)
