@@ -22,3 +22,6 @@ thailand@ctmc.com : Abcd1234! : Thailand<br/>
 unitedarabemirates@ctmc.com : Abcd1234! : United Arab Emirates<br/>
 usa@ctmc.com : Abcd1234! : USA<br/>
 zimbabwe@ctmc.com : Abcd1234! : Zimbabwe<br/>
+
+APK: [APK Folder](https://github.com/mnleano/cartrack-mobile-challenge-android/tree/master/apk)<br/>
+Direct download link: [Cartrack Mobile Challange](https://github.com/mnleano/cartrack-mobile-challenge-android/raw/master/apk/Cartrack-Mobile-Challenge-1.0-debug.apk)
