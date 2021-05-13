@@ -30,8 +30,6 @@ class LoginViewModel(private val repository: LoginRepository) : BaseViewModel() 
 
     fun login() {
 
-        validator?.let { if (!it.validate()) return }
-
         val username = this.email.value
         val password = this.password.value
         val country = this.country.value
@@ -39,6 +37,7 @@ class LoginViewModel(private val repository: LoginRepository) : BaseViewModel() 
 
         if (username == null || password == null || country == null)
             return
+        validator?.let { if (!it.validate()) return }
 
         val loginData = repository.login(LoginView(username, password, country))
         mLoading.addSource(loginData) {

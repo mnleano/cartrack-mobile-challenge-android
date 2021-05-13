@@ -2,6 +2,7 @@ package com.neds.cartrackmobilechallenge.ui.login
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.inputmethod.EditorInfo
 import androidx.databinding.DataBindingUtil
 import br.com.ilhasoft.support.validation.Validator
 import com.neds.cartrackmobilechallenge.R
@@ -33,6 +34,14 @@ class LoginActivity : BaseActivity() {
         binding.lifecycleOwner = this
         binding.vm = vm
         vm.addValidator(Validator(binding))
+
+        binding.etPassword.setOnEditorActionListener { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_NEXT) {
+                Lg.d("initViews.onEditorActionListener: actionNext")
+                binding.etCountry.performClick()
+            }
+            true
+        }
     }
 
     private fun observeData() {
