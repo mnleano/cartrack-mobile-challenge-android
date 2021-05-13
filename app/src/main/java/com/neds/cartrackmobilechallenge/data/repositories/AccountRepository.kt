@@ -118,7 +118,7 @@ class AccountRepository(
                 "Poland User",
                 "poland@ctmc.com",
                 "Abcd1234!",
-                "item>Poland"
+                "Poland"
             )
         )
         appUserBox.put(

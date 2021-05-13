@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import androidx.databinding.DataBindingUtil
 import com.neds.cartrackmobilechallenge.R
 import com.neds.cartrackmobilechallenge.data.viewModels.MainViewModel
@@ -15,6 +16,7 @@ import com.neds.cartrackmobilechallenge.ui.BaseActivity
 import com.neds.cartrackmobilechallenge.ui.login.LoginActivity
 import com.neds.cartrackmobilechallenge.ui.userDetails.UserDetailsActivity
 import com.neds.cartrackmobilechallenge.ui.util.AlertDialogUtil
+import com.neds.cartrackmobilechallenge.ui.util.SnackbarBuilder
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : BaseActivity() {
@@ -49,11 +51,19 @@ class MainActivity : BaseActivity() {
     }
 
     private fun observeData() {
+        vm.loading.observe(
+            this,
+            { binding.loading.visibility = if (it) View.VISIBLE else View.GONE })
+
         vm.users.observe(this, { users ->
             users.forEach { Lg.d("observeData.users: user=$it") }
             this.users.clear()
             this.users.addAll(users)
             adapter.notifyDataSetChanged()
+        })
+
+        vm.errorMessage.observe(this, {
+            SnackbarBuilder.show(binding.mainContainer, it)
         })
     }
 

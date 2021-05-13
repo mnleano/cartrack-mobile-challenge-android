@@ -24,5 +24,6 @@ class NetworkInterceptor(context: Context) : Interceptor {
         return chain.proceed(originalRequest)
     }
 
-    class NoNetworkException internal constructor() : IOException("Please check Network Connection")
+    class NoNetworkException internal constructor() :
+        IOException("Please check Network Connection!")
 }
